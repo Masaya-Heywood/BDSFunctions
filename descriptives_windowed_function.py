@@ -23,10 +23,10 @@ def descriptivesWindow (numberSet, calType, winSize):
     The window will ignore any selections that are larger or smaller than winSize.
     """
     
-    #incase these aren't imported
-    import numpy as np
-    import scipy.stats as sp
-    outputArr = np.array([])
+        #incase these aren't imported
+        import numpy as np
+        import scipy.stats as sp
+        outputArr = np.array([])
     
     #calculates the selection
     for i in range(len(numberSet)):
