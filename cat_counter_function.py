@@ -10,7 +10,7 @@ import pandas as pd
 import scipy.stats as sp
 import sklearn.metrics as sk
 
-dummyList = [3, 4, 5, 8, 5]
+dummyList = [3, 4, 4, 5, 8, 5]
 dummy2DList = [(0,50), (10,5), (5,10)]
 dummyNumpy = np.array(dummyList)
 dummy2DNumpy = np.array(dummy2DList)
@@ -20,8 +20,12 @@ def catCount (numberSet):
     """
     Function by Masaya Heywood
     Takes in a 1D numpy array or list (numberSet) and returns a 2D array detailing the entry and count of entries (Unique value, amount of values).
+    The returned value will be displayed in ascending order based on the value of the entry.
     """
+    
+    ##importing incase these are not imported
     from collections import Counter
+    import numpy as np
 
     output = []
     uniqueValue = list(Counter(numberSet).values())
@@ -33,7 +37,6 @@ def catCount (numberSet):
         output.append(1)
         output[each] = (valueCount[each], uniqueValue[each])
         
-            
-    return (sorted(output))
+    return (sorted(output,key=lambda l:l[0]))
 
-print(catCount(dummyList))
+print(catCount(dummyNumpy))
